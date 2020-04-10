@@ -644,7 +644,7 @@ void Cbars_countdown::count_bars2(int a)
    
    //---countdown from 11 to 12
    if(Count2>=111
-      Count<=112)
+      && Count<=112)
    {
       //---buy
       if(Buy==1 
@@ -660,7 +660,7 @@ void Cbars_countdown::count_bars2(int a)
             prev2=1;   
             count.sellcountdown(1);       
          } 
-      
+   }
      //---countdown for 13
    if(Count2==113)
    {   
