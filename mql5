@@ -642,8 +642,9 @@ void Cbars_countdown::count_bars2(int a)
          } 
    }else
    
-   //---countdown from 11 to 13
-   if(113>=Count2>=110)
+   //---countdown from 11 to 12
+   if(Count2>=111
+      Count<=112)
    {
       //---buy
       if(Buy==1 
@@ -660,10 +661,21 @@ void Cbars_countdown::count_bars2(int a)
             count.sellcountdown(1);       
          } 
       
-      if(Count2==113)
-      {
-         count.Number13(1);
-      }    
+     //---countdown for 13
+   if(Count2==113)
+   {   
+      //---buy
+      if(Buy==1 
+         && PriceDataTable[1].close<PriceDataTable[prev2].close)
+         {      
+           count.Number13(1);             
+         }
+      //---sell         
+      if(Sell==1 
+         && PriceDataTable[1].close>PriceDataTable[prev2].close)
+         {     
+            count.Number13(1);      
+         } 
    }
 };
 //+-----------------------------------------------------------------------+
